@@ -29,5 +29,33 @@ if (control1) {
 ```javascript
 'li.' + filterName // результат: 'li.toaster'
 ```
+функция переключения фильтра
+```javascript
+function toggleFilter(filterName) {
+    var control = document.querySelector('li.' + filterName);
+    if (control) {
+        control.classList.add('active');
+    }
+
+    var photo = document.querySelector('.photo');
+    if (photo) {
+        photo.classList.add(filterName);
+    }
+}
+```
+Чтобы с помощью JavaScript считать значение data-атрибутов, нужно использовать свойство `dataset`. Пример:
+```html
+<div class="control" data-filtername="walden"></div>
+```
+```javascript
+var control = document.querySelector('.control');
+var filter = control.dataset.filtername;
+// в переменной filter теперь строка «walden»
+```
+Добавлять содержимое в HTML-элемент через JavaScript можно с помощью свойства innerHTML:
+```javascript
+var control = document.querySelector('.control');
+control.innerHTML = 'walden';
+```
 
 
