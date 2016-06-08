@@ -14,3 +14,10 @@ control.classList.add('active');
 ```javascript
 control.classList.remove('active');
 ```
+Чтобы проверить, что в переменной есть элемент и с ним можно работать, используется условный оператор if
+```javascript
+var control1 = document.querySelector('li.toaster');
+if (control1) {
+    control1.classList.remove('active');
+}
+```
