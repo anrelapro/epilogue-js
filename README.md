@@ -101,4 +101,10 @@ for (var i = 0; i < controls.length; i++) {
 }
 });
 ```
+Чтобы изменить CSS-свойство элемента в скрипте, нужно обратиться к свойству style элемента. Например:
+```javascript
+var element = document.querySelector('.photo-original');
+element.style.width = '10px';
+```
+Но названия свойств в JavaScript не всегда совпадают с их названиями в CSS. Например, CSS-свойство `left` совпадает с `style.left`, но CSS-свойство `baсkground-color` уже отличается: `style.backgroundColor`.
 
