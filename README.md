@@ -57,5 +57,22 @@ var filter = control.dataset.filtername;
 var control = document.querySelector('.control');
 control.innerHTML = 'walden';
 ```
+Если нужно совершить несколько однотипных действий, то можно использовать цикл for. Вот его синтаксис:
+```javascript
+for (var num = 0; num <= 5; num++) {
+  console.log(num);
+}
+// Выведет в «консоль» числа 0, 1, 2, 3, 4 и 5
+```
+Другой метод `querySelectorAll` возвращает все элементы, соответствующие селектору.
+
+С помощью `for` удобно перебирать найденные элементы:
+```javascript
+var controls = document.querySelectorAll('.toggle-controls li');
+for (var i = 0; i < controls.length; i++) {
+  controls[i].innerHTML = 'переключатель';
+}
+// Во все элементы списка переключателей запишется строка «переключатель».
+```
 
 
