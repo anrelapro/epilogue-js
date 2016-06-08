@@ -76,13 +76,29 @@ for (var i = 0; i < controls.length; i++) {
 ```
 В этом фрагменте кода мы сделалем следующее:
 
-1. Нашли элемент списка и у него вызвали метод addEventListener.
+1. Нашли элемент списка и у него вызвали метод `addEventListener`.
 2. Указали отслеживать событие click или «щелчок мыши».
 3. Для щелчков указали функцию-обработчик без названия, внутри которой вызвали функцию переключения фильтров.
 ```javascript
 var toaster = document.querySelector('li.toaster');
 toaster.addEventListener('click', function() {
   toggleFilter(toaster.dataset.filter);
+});
+```
+Функция `clickControl` принимает найденный элемент и добавляет ему обработчик щелчков мыши, в котором вызывается функция переключения фильтра. Название фильтра для функции переключения берётся из data-атрибута самого элемента.
+```javascript
+function clickControl(control) {
+  control.addEventListener('click', function() {
+      toggleFilter(control.dataset.filter);
+  });
+};
+```
+Благодаря `clickControl` нам нужно добавить только одну строчку в цикл, чтобы все переключатели заработали:
+```javascript
+for (var i = 0; i < controls.length; i++) {
+    ... 
+    clickControl(controls[i]);
+}
 });
 ```
 
